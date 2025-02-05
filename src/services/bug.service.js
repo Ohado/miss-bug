@@ -1,3 +1,4 @@
+import PDFDocument from 'pdfkit'
 import fs from 'fs'
 import { utilService } from './util.service.js'
 
@@ -7,6 +8,7 @@ export const bugService = {
     getById,
     save,
     remove,
+    exportPDF
 }
 
 const bugs = JSON.parse(fs.readFileSync('./data/bugs.json'))
@@ -35,4 +37,19 @@ function save(bug) {
         bugs.push(bug)
     }
     return bug
+}
+async function exportPDF() {
+    const doc = new PDFDocument();
+    doc.pipe(fs.createWriteStream('./bugs.pdf'));
+    doc
+    .fontSize(27)
+    .text( bugs.map(bug => 
+        `**** ${bug.title} ****
+** severity: ${bug.severity} **
+** ${new Date(bug.createdAt).toUTCString()} **
+
+`
+    ) )
+    doc.end();
+    return doc;
 }

@@ -66,7 +66,10 @@ export function BugIndex() {
     <main className="main-layout">
       <h3>Bugs App</h3>
       <main>
-        <button onClick={onAddBug}>Add Bug ⛐</button>
+        <div className="buttons flex">
+          <button onClick={onAddBug}>Add Bug ⛐</button>
+          <button onClick={bugService.exportPDF}>Export as PDF 🗎</button>
+      </div>
         <BugList bugs={bugs} onRemoveBug={onRemoveBug} onEditBug={onEditBug} />
       </main>
     </main>

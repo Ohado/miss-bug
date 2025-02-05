@@ -17,10 +17,14 @@ app.get('/api/bug', (req, res) => {
     res.send(bugService.query())
 })
 
+app.get('/api/bug/print', (req, res) => {
+    const pdfFile = bugService.exportPDF()
+    res.json({path: '/bugs.pdf'})
+})
+
 app.get('/api/bug/save', (req, res) => {
     const {_id, title, severity, createdAt} = req.query
     const bugToSave = {_id:_id, title, severity: +severity, createdAt: createdAt}
-    console.log(bugToSave);
     try{
         res.send(bugService.save(bugToSave))
     }
@@ -51,5 +55,6 @@ app.get('/api/bug/:bugId/remove', (req, res) => {
         res.status(4000, `couldn't remove bug`)
     }
 })
+
 
 app.listen(3030, () => {console.log('Server ready at port 3030')})
