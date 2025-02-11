@@ -1,6 +1,6 @@
 import cors from 'cors'
 import express from 'express'
-import { bugService } from './src/services/bug.service.js'
+import { bugService } from './src/services/bug/bug.service.js'
 import { utilService } from './src/services/util.service.js'
 
 const corsOptions = {

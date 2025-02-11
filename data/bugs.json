@@ -1,32 +1,37 @@
 [
-    {
-      "_id": "abc123",
-      "title": "Cannot save a Car",
-      "severity": 3,
-      "createdAt": 1542107359454
-    },
-    {
-      "_id": "def456",
-      "title": "Error loading dashboard",
-      "severity": 5,
-      "createdAt": 1542107359455
-    },
-    {
-      "_id": "ghi789",
-      "title": "Form validation not working",
-      "severity": 2,
-      "createdAt": 1542107359456
-    },
-    {
-      "_id": "jkl012",
-      "title": "Missing translation in settings",
-      "severity": 4,
-      "createdAt": 1542107359457
-    },
-    {
-      "_id": "mno345",
-      "title": "App crashes on login",
-      "severity": 1,
-      "createdAt": 1542107359458
-    }
+  {
+    "_id": "abc123",
+    "title": "Cannot save a Car",
+    "severity": 3,
+    "createdAt": 1542107359454,
+    "labels": ["critical", "need-CR"]
+  },
+  {
+    "_id": "def456",
+    "title": "Error loading dashboard",
+    "severity": 5,
+    "createdAt": 1542107359455,
+    "labels": ["dev-branch"]
+  },
+  {
+    "_id": "ghi789",
+    "title": "Form validation not working",
+    "severity": 2,
+    "createdAt": 1542107359456,
+    "labels": []
+  },
+  {
+    "_id": "jkl012",
+    "title": "Missing translation in settings",
+    "severity": 4,
+    "createdAt": 1542107359457,
+    "labels": ["need-CR", "dev-branch"]
+  },
+  {
+    "_id": "mno345",
+    "title": "App crashes on login",
+    "severity": 1,
+    "createdAt": 1542107359458,
+    "labels": ["critical"]
+  }
 ]

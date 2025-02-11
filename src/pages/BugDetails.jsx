@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { bugService } from '../services/bug.service.local.js'
+import { bugService } from '../services/bug/bug.service.local.js'
 import { showErrorMsg } from '../services/event-bus.service.js'
 import { useParams } from 'react-router'
 import { useEffect } from 'react'

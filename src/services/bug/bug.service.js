@@ -1,6 +1,6 @@
 import PDFDocument from 'pdfkit'
 import fs from 'fs'
-import { utilService } from './util.service.js'
+import { utilService } from '../util.service.js'
 
 
 export const bugService = {
