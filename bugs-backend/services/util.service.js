@@ -1,10 +1,12 @@
+import fs from "fs"
+
 export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive
 }
 
-function makeId(length = 6) {
+export function makeId(length = 6) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
@@ -29,4 +31,18 @@ function getRandomIntInclusive(min, max) {
     min = Math.ceil(min)
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
+}
+export function saveToStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+}
+
+export function loadFromStorage(key) {
+    const data = localStorage.getItem(key)
+    return (data) ? JSON.parse(data) : undefined
+}
+
+export function readJsonFile(path) {
+    const str = fs.readFileSync(path, 'utf8')
+    const json = JSON.parse(str)
+    return json
 }

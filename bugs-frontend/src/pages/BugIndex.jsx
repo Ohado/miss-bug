@@ -1,5 +1,5 @@
-import { bugService } from '../services/bug/bug.service.local.js'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+import { bugService } from '../../src/services/bug'
+import { showSuccessMsg, showErrorMsg } from '../../src/services/event-bus.service.js'
 import { BugList } from '../cmps/BugList.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'

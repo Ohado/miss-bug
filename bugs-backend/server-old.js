@@ -1,10 +1,9 @@
 import cors from 'cors'
 import express from 'express'
-import { bugService } from './src/services/bug/bug.service.js'
-import { utilService } from './src/services/util.service.js'
+import { bugService } from './api/bug/bug.service.js'
 
 const corsOptions = {
-    origin: ['http://127.0.0.1:5173', 'http://localhost:5173'],
+    origin: ['http://127.0.0.1:5173', 'http://localhost:5173', 'http://localhost:3030', 'http://127.0.0.1:3030'],
     credentials: true
 }
 const app = express()

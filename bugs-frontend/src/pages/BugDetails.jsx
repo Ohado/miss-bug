@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
-import { bugService } from '../services/bug/bug.service.local.js'
-import { showErrorMsg } from '../services/event-bus.service.js'
-import { useParams } from 'react-router'
+import { bugService } from '../../src/services/bug'
+import { showErrorMsg } from '../../src/services/event-bus.service.js'
+import { useNavigate, useParams } from 'react-router'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -11,6 +11,7 @@ export function BugDetails() {
 
     const [bug, setBug] = useState(null)
     const { bugId } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         loadBug()
@@ -21,8 +22,9 @@ export function BugDetails() {
             const bug = await bugService.getById(bugId)
             setBug(bug)
         } catch (err) {
+            console.error(err)
             showErrorMsg('Cannot load bug')
-
+            navigate('/bug')
         }
     }
 
