@@ -19,5 +19,17 @@
         "fullname": "Tsuki Ca",
         "password   ": "secret3",
         "score": 100
+    },
+    {
+        "username": "testuser",
+        "fullname": "Test User",
+        "password": "$2b$10$OLAiVAo4nRcsj/CcQev20.utv0Cg0sOiCwOdR/gsCyo3pPUSdTrEK",
+        "_id": "uVEyxK"
+    },
+    {
+        "username": "testuser2",
+        "fullname": "Test User",
+        "password": "$2b$10$rssaVvLJo.wIZp.DtMhsCu044chhDU4zNIryUw.d2MX1CazhPZR56",
+        "_id": "0pFPjR"
     }
 ]

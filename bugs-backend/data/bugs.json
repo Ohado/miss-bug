@@ -2,42 +2,56 @@
     {
         "_id": "abc123",
         "title": "Cannot save a Car",
+        "description": "errors when clicking Save",
         "severity": 3,
         "createdAt": 1542107359454,
-        "labels": [
-            "critical",
-            "need-CR"
-        ]
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
+    },
+    {
+        "_id": "def456",
+        "title": "Page crashes on load",
+        "description": "application crashes immediately",
+        "severity": 2,
+        "createdAt": 1542107359455,
+        "creator": {
+            "_id": "u102",
+            "fullname": "Muki Ba"
+        }
     },
     {
         "_id": "ghi789",
-        "title": "Form validation not working",
-        "severity": 2,
+        "title": "Missing translations",
+        "description": "some text is not translated",
+        "severity": 1,
         "createdAt": 1542107359456,
-        "labels": [],
-        "bugToSave": {
-            "_id": "ghi789",
-            "title": "Form validation not working",
-            "severity": 0
+        "creator": {
+            "_id": "u103",
+            "fullname": "Tsuki Ca"
         }
     },
     {
         "_id": "jkl012",
-        "title": "Missing translation in settings",
-        "severity": 5
+        "title": "Slow performance on mobile",
+        "description": "app lags significantly",
+        "severity": 4,
+        "createdAt": 1542107359457,
+        "creator": {
+            "_id": "u101",
+            "fullname": "Puki Ja"
+        }
     },
     {
         "_id": "mno345",
-        "title": "App crashes on login",
-        "severity": 1,
+        "title": "Form validation issues",
+        "description": "users can submit empty forms",
+        "severity": 2,
         "createdAt": 1542107359458,
-        "labels": [
-            "critical"
-        ]
-    },
-    {
-        "title": "66",
-        "severity": 6,
-        "_id": "ln2XCa"
+        "creator": {
+            "_id": "u102",
+            "fullname": "Muki Ba"
+        }
     }
 ]

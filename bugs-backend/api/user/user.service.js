@@ -9,6 +9,7 @@ export const userService = {
     getById,
     remove,
     save,
+    getByUsername
 }
 
 
@@ -23,12 +24,18 @@ function getById(userId) {
     return Promise.resolve(user)
 }
 
+function getByUsername(usernameToFind) {
+    const user = users.find(user => user.username === usernameToFind)
+    if (!user) return null
+    return Promise.resolve(user)
+}
+
 function remove(userId) {
     users = users.filter(user => user._id !== userId)
     return _saveUsersToFile()
 }
 
-function save(user) {
+async function save(user) {
     user._id = makeId()
     // TODO: severe security issue- attacker can post admins
     users.push(user)
