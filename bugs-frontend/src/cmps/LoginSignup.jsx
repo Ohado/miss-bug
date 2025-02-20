@@ -7,7 +7,15 @@ export function LoginSignup({onLogin, onSignup, onLogout}) {
     const [loggedUser, setLoggedUser] = useState(userService.getEmptyUser())
     const [isLogged, setIsLogged] = useState(false)
 
-    useEffect(() => {},[])
+    useEffect(() => {
+        async function fetchData () {
+            const currentLogged = await userService.getLoggedinUser()
+            if(currentLogged)
+                setLoggedUser(JSON.parse(currentLogged))
+                setIsLogged(true)
+        }
+        fetchData()
+    },[])
 
     async function handleLogin(ev) {
         ev.preventDefault()
