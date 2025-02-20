@@ -1,3 +1,4 @@
+import { Exception } from 'sass'
 import {loggerService} from '../../services/logger.service.js'
 import {userService} from '../user/user.service.js'
 import bcrypt from 'bcrypt'
@@ -20,6 +21,7 @@ async function signup({username, fullname, password}) {
             throw(`missing details!`)
         }
         const userExists = await userService.getByUsername(username)
+        console.log(userExists);
         if(userExists) {
             throw(`user name exists!`)
         }
@@ -32,6 +34,7 @@ async function signup({username, fullname, password}) {
     }
     catch (err) {
         loggerService.error("Couldn't sign up: " +err);
+        throw(err)
     }
 }
 
@@ -39,7 +42,7 @@ async function login(username, password) {
     const user = await userService.getByUsername(username)
     if(!user) throw 'unknown user'
     const match = await bcrypt.compare(password, user.password)
-    if(!match) throw `user name and password don't match`
+    if(!match) throw new Exception `user name and password don't match`
     const miniuser = {
         _id: user._id,
         username: user.username,

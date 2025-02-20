@@ -6,8 +6,10 @@
 
 .header-container {
     display: flex;
+    gap: 30px;
     align-items: center;
-
+    text-align: right;
+    padding-inline: 20px;
 }
 
 .header-container h1 {

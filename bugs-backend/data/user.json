@@ -31,5 +31,11 @@
         "fullname": "Test User",
         "password": "$2b$10$rssaVvLJo.wIZp.DtMhsCu044chhDU4zNIryUw.d2MX1CazhPZR56",
         "_id": "0pFPjR"
+    },
+    {
+        "username": "mikey",
+        "fullname": "mikey mini",
+        "password": "$2b$10$CwrMSXuYApRy8SjoVB7JN.kOCbVmd/9xAvcvIgzRYAS3dC8L0NfGK",
+        "_id": "att9bQ"
     }
 ]

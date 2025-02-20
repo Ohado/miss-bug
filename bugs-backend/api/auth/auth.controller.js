@@ -23,7 +23,8 @@ export async function login(req, res) {
         res.cookie('loginToken', loginToken, { samesite: 'None', secure: true })
         res.json(user)
     } catch(err) {
-        res.status(400).send({err: 'Failed to login '})
+        console.error('Failed to login: '+err.msg)
+        res.status(401).send({err: 'Failed to login '})
     }
 }
 
